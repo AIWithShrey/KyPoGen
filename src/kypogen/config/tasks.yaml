@@ -1,0 +1,26 @@
+generate_policy:
+  description: >
+    Create a Kyverno validating policy for {resource} with label {label} that implements
+    the specified security controls and validation rules.
+    Consider common security best practices and compliance requirements.
+  expected_output: >
+    A complete Kyverno policy in YAML format including:
+    - Policy metadata and target resources
+    - Validation rules with clear logic
+    - Comments explaining each section
+  agent: policy_generator
+  output_file: output/policy.yaml
+
+validate_policy:
+  description: >
+    Validate the generated Kyverno policy against security requirements
+    and test it with sample scenarios to verify effectiveness.
+  expected_output: >
+    A validation report containing:
+    - Syntax validation results
+    - Test scenarios with sample resources
+    - Pass/fail status for each test
+    - Compliance verification status
+    - Improvement recommendations if needed
+  agent: policy_validator
+  output_file: output/report.md
